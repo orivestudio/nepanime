@@ -1,0 +1,87 @@
+/*Navbar*/
+.page-container .navbar-fixed {
+    height: 60px;
+}
+
+nav {
+    height: 60px;
+    line-height: 60px;
+}
+
+.brand-logo img {
+    height: 34px;
+    display: block;
+    margin-top: 13px;
+}
+
+nav ul a {
+    color: #1e1e1e;
+}
+
+ul.left.hide-on-med-and-down {
+    width: 100%;
+}
+
+.hide-on-med-and-down li:first-child {
+    margin-left: 264px;
+}
+
+.hide-on-med-and-down a {
+    display: inline;
+    padding: 0 0 1px 0;
+    margin-right: 56px;
+}
+
+.hide-on-med-and-down li:last-child a {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    height: 60px;
+}
+
+.hide-on-med-and-down img {
+    margin-top: 20px;
+    height: 20px;
+}
+
+.hide-on-med-and-down a:hover {
+    background-color: unset;
+    border-bottom: 3px solid #33cc00;
+}
+
+img.responsive-img {
+    width: 1280px;
+}
+
+.hide-on-med-and-down li:last-child a:hover {
+    background-color: unset;
+    border-bottom: none;
+}
+
+.nav-wrapper form {
+    width: 76%;
+    float: right;
+    height: 60px;
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 135px;
+    }
+
+    .nav-wrapper .search-bar {
+        display: none;
+    }
+
+    nav a.button-collapse {
+        margin-top: 2px;
+        color: #039be5;
+    }
+
+    nav a.button-collapse i {
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+/*Navbar Ends*/
