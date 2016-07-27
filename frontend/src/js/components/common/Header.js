@@ -12,6 +12,7 @@ class Header extends React.Component {
     super(props);
     this.showSidebar = this.showSidebar.bind(this);
     this.toggleSearchBar = this.toggleSearchBar.bind(this);
+    $(".button-collapse").sideNav();
 
     this.state = {
       displaySearchBar: false
@@ -26,20 +27,19 @@ class Header extends React.Component {
     this.state.displaySearchBar = !this.state.displaySearchBar;
     this.setState({displaySearchBar: this.state.displaySearchBar});
     if (this.state.displaySearchBar) {
-      console.log(this.refs);
       setTimeout(()=> {
-        this.refs.search.focus()
+        this.refs.search.focus();
       }, 100);
     }
   }
 
   render() {
     return (
-      <div className="navbar-fixed">
+      <div className="navbar-fixed cf">
         <nav className="white" role="navigation">
           <div className="nav-wrapper container"><a id="logo-container" href="#" className="brand-logo"><img
             src="img/nepanime-logo.svg" alt="nepanime logo"/></a>
-            {<ul className="left hide-on-med-and-down" style={{display:this.state.displaySearchBar?'none':'block'}}>
+            {<ul className="hide-on-med-and-down" style={{display:this.state.displaySearchBar?'none':'block'}}>
               <li><a href="#">News</a></li>
               <li><a href="#">List</a></li>
               <li><a href="#">About Us</a></li>
@@ -49,7 +49,7 @@ class Header extends React.Component {
             <div className="search-bar">
               {<form style={{display:this.state.displaySearchBar?'block':'none'}}>
                 <div className="input-field">
-                  <input id="search" ref="search" type="search" autofocus onBlur={this.toggleSearchBar} required/>
+                  <input id="search" ref="search" type="search" placeholder="Search" autofocus onBlur={this.toggleSearchBar} required/>
                   <i className="material-icons" onClick={this.toggleSearchBar}>close</i>
                 </div>
               </form>}
@@ -60,7 +60,7 @@ class Header extends React.Component {
               <li><a href="#">List</a></li>
               <li><a href="#">About Us</a></li>
             </ul>
-            <a onClick={this.showSidebar} data-activates="nav-mobile" className="button-collapse"><i
+            <a onClick={this.showSidebar} data-activates="nav-mobile" className="button-collapse burger"><i
               className="material-icons">menu</i>
             </a>
           </div>

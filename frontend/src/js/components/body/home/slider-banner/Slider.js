@@ -16,7 +16,7 @@ class Slider extends React.Component {
       <div>
         <img className="responsive-img" src="img/last.png"/>
         <div className="featuredPost">
-          //TODO
+        
         </div>
       </div>
     );
