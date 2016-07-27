@@ -55,7 +55,7 @@
         fonts: './dist/css/fonts',
         materializeFonts: './dist/fonts'
       },
-      appJs: './src/js/app.js',
+      appJs: './src/js/main.js',
       html: './index.html'
     },
     env: {
