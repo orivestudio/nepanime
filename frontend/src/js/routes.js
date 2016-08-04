@@ -6,14 +6,19 @@ import store from './store/store';
 //Component
 import App from './components/App';
 import HomePageMain from './components/body/home/HomePageMain';
+import PostPageMain from './components/body/post/PostPageMain';
+import ViewPost from './components/body/post/ViewPost';
 import PageNotFound from './components/common/PageNotFound';
 
 
 const history = syncHistoryWithStore(browserHistory, store);
 let routes = (
-  <Router history={history}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
     <Route path="/" component={App}>
       <IndexRoute component={HomePageMain}/>
+      <Route path="posts" name="Posts" component={PostPageMain}>
+        <Route path=":id" name="View Posts" component={ViewPost}/>
+      </Route>
     </Route>
     <Route path="*" name="Page Not Found" component={PageNotFound}/>
   </Router>

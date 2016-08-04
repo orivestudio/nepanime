@@ -6,18 +6,24 @@
 
 //React dependencies
 import React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+
+import moment from 'moment';
 
 class Slider extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>
-        <img className="responsive-img" src="img/last.png"/>
-        <div className="featuredPost">
-        
-        </div>
+      <div className="slider-banner">
+        <img className="responsive-img" src={this.props.imageUrl || 'img/defaultbanner.jpg'} alt="slider-banner"/>
+        {this.props.postInfo && <div className="post-info">
+          <h4>{this.props.postInfo.title}</h4>
+          <span className="banner-user-info">{this.props.postInfo.user.name}</span>
+          <span className="posted-at">{moment(this.props.postInfo.date).format('MMM DD')}</span>
+        </div>}
       </div>
     );
   }

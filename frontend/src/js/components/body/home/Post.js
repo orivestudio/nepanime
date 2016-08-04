@@ -22,7 +22,7 @@ class Post extends Component {
 
   render() {
     return (
-      <div className="post card hoverable">
+      <div className="post card hoverable" onClick={()=>{this.context.router.push('/posts/'+this.props.post.id)}}>
         <div className="card-image post-image">
           <img src={this.props.post.imageUrl} alt="post image"/>
         </div>
@@ -32,14 +32,14 @@ class Post extends Component {
           <div className="post-title">
             <p>{this.props.post.title}</p>
           </div>
-          <div className="user-info">
-            <img src={this.props.post.user && this.props.post.user.profilePictureUrl} alt="poster"/>
-            <span>{this.props.post.user && this.props.post.user.name}</span>
-            <div className="border-block"></div>
-          </div>
-          <div className="post-end">
-            <span className="create-date">{moment(this.props.post.date).format('MMM DD')}</span>
-            <span>{this.props.post.user && this.props.post.user.type}</span>
+          <div>
+            <div className="user-info">
+              <span>{this.props.post.user && this.props.post.user.name}</span>
+            </div>
+            <div className="post-end">
+              <span className="create-date">{moment(this.props.post.date).format('MMM DD')}</span>
+              <span>{this.props.post.user && this.props.post.user.type}</span>
+            </div>
           </div>
         </div>
       </div>

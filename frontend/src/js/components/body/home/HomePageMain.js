@@ -5,6 +5,7 @@
  */
 
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 //Components
 import Slider from './slider-banner/Slider';
@@ -35,7 +36,7 @@ let latestPosts = [{
 }];
 
 let popularPosts = [{
-  id: 1,
+  id: 3,
   imageUrl: 'img/post2.jpg',
   categories: ['Anime', 'Post'],
   title: 'Why SAO is the Best and the worst thing ever',
@@ -46,7 +47,7 @@ let popularPosts = [{
   },
   date: '2010-07-11'
 }, {
-  id: 2,
+  id: 4,
   imageUrl: 'img/post1.jpg',
   categories: ['Game', 'List'],
   title: 'Games of the century',
@@ -72,13 +73,13 @@ class HomePageMain extends Component {
   selectLatest(e) {
     e.preventDefault();
     this.state.latest = true;
-    this.setState({latest: this.state.latest, posts: latestPosts});
+    this.setState({latest: this.state.latest, posts: this.props.latestPosts});
   }
 
   selectPopular(e) {
     e.preventDefault();
     this.state.latest = false;
-    this.setState({latest: this.state.latest, posts: popularPosts});
+    this.setState({latest: this.state.latest, posts: this.props.popularPosts});
   }
 
   renderPost(post, index) {
@@ -90,7 +91,7 @@ class HomePageMain extends Component {
   render() {
     return (
       <div className="row">
-        <Slider/>
+        <Slider imageUrl="img/last.png"/>
         <div className="col s12 m12 l8">
           <div className="post-types">
             <a onClick={this.selectLatest.bind(this)} className={this.state.latest?'selected':''}>Latest</a>
@@ -103,4 +104,11 @@ class HomePageMain extends Component {
   }
 }
 
-export default HomePageMain;
+let mapStateToProps = function (state) {
+  return {
+    latestPosts: state.crudReducer.posts.latestPosts,
+    popularPosts: state.crudReducer.posts.popularPosts
+  }
+};
+
+export default connect(mapStateToProps)(HomePageMain);

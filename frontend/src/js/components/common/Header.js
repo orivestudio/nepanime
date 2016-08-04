@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import {Link} from 'react-router';
 
 class Header extends React.Component {
 
@@ -12,7 +13,6 @@ class Header extends React.Component {
     super(props);
     this.showSidebar = this.showSidebar.bind(this);
     this.toggleSearchBar = this.toggleSearchBar.bind(this);
-    $(".button-collapse").sideNav();
 
     this.state = {
       displaySearchBar: false
@@ -37,8 +37,8 @@ class Header extends React.Component {
     return (
       <div className="navbar-fixed cf">
         <nav className="white" role="navigation">
-          <div className="nav-wrapper container"><a id="logo-container" href="#" className="brand-logo"><img
-            src="img/nepanime-logo.svg" alt="nepanime logo"/></a>
+          <div className="nav-wrapper container"><Link to="/" id="logo-container" href="#" className="brand-logo"><img
+            src="img/nepanime-logo.svg" alt="nepanime logo"/></Link>
             {<ul className="hide-on-med-and-down" style={{display:this.state.displaySearchBar?'none':'block'}}>
               <li><a href="#">News</a></li>
               <li><a href="#">List</a></li>

@@ -4,9 +4,11 @@ import {routerReducer} from 'react-router-redux';
 
 //Reducers
 import apiReducer from '../reducers/apiReducer';
+import crudReducer from '../reducers/crudReducer';
 
 let reducers = combineReducers({
   apiReducer: apiReducer,
+  crudReducer: crudReducer,
   routing: routerReducer
 });
 
