@@ -20,7 +20,7 @@ class Header extends React.Component {
   }
 
   showSidebar() {
-    $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav();
   }
 
   toggleSearchBar() {
@@ -35,33 +35,34 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="navbar-fixed cf">
-        <nav className="white" role="navigation">
-          <div className="nav-wrapper container"><Link to="/" id="logo-container" href="#" className="brand-logo"><img
-            src="img/nepanime-logo.svg" alt="nepanime logo"/></Link>
-            {<ul className="hide-on-med-and-down" style={{display:this.state.displaySearchBar?'none':'block'}}>
-              <li><a href="#">News</a></li>
-              <li><a href="#">List</a></li>
-              <li><a href="#">About Us</a></li>
-              <li className="right"><a onClick={this.toggleSearchBar}><img src="img/search-icon.svg"
-                                                                           alt="search icon"/></a></li>
+      <div className='navbar-fixed cf'>
+        <nav className='white' role='navigation'>
+          <div className='nav-wrapper container'><Link to='/' id='logo-container' className='brand-logo'><img
+            src='img/nepanime-logo.svg' alt='nepanime logo'/></Link>
+            {<ul className='hide-on-med-and-down' style={{display:this.state.displaySearchBar?'none':'block'}}>
+              <li><Link to='/'>News</Link></li>
+              <li><Link to='/'>List</Link></li>
+              <li><Link to='/'>About Us</Link></li>
+              <li className='right'><a onClick={this.toggleSearchBar}><img src='img/search-icon.svg'
+                                                                           alt='search icon'/></a></li>
             </ul>}
-            <div className="search-bar">
+            <div className='search-bar'>
               {<form style={{display:this.state.displaySearchBar?'block':'none'}}>
-                <div className="input-field">
-                  <input id="search" ref="search" type="search" placeholder="Search" autofocus onBlur={this.toggleSearchBar} required/>
-                  <i className="material-icons" onClick={this.toggleSearchBar}>close</i>
+                <div className='input-field'>
+                  <input id='search' ref='search' type='search' placeholder='Search' autofocus
+                         onBlur={this.toggleSearchBar} required/>
+                  <i className='material-icons' onClick={this.toggleSearchBar}>close</i>
                 </div>
               </form>}
             </div>
 
-            <ul id="nav-mobile" className="side-nav">
-              <li><a href="#">News</a></li>
-              <li><a href="#">List</a></li>
-              <li><a href="#">About Us</a></li>
+            <ul id='nav-mobile' className='side-nav'>
+              <li><Link to='/'>News</Link></li>
+              <li><Link to='/'>List</Link></li>
+              <li><Link to='/'>About Us</Link></li>
             </ul>
-            <a onClick={this.showSidebar} data-activates="nav-mobile" className="button-collapse burger"><i
-              className="material-icons">menu</i>
+            <a onClick={this.showSidebar} data-activates='nav-mobile' className='button-collapse burger'><i
+              className='material-icons'>menu</i>
             </a>
           </div>
         </nav>
