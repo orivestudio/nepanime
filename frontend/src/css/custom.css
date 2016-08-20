@@ -242,6 +242,14 @@ img.responsive-img {
     font-size: 1.125rem;
     line-height: 1.778rem;
 }
+.post-text strong{
+    font-weight: 600;
+}
+.post-text img{
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+}
 
 .featured-post-title .orange-border {
     display: block;
@@ -278,6 +286,18 @@ img.responsive-img {
     padding-bottom: 10px;
     border-bottom: 2px solid black;
 }
+
+/*WYSIWYG*/
+
+.wysiwyg .row{
+    padding-top: 25px;
+}
+
+.editor-toolbar a.fa.fa-question-circle{
+    visibility: hidden;
+}
+
+/*End of WYSIWYG*/
 
 @media only screen and (max-width: 992px) {
     nav .brand-logo {

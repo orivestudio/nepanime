@@ -10,6 +10,7 @@ import PostPageMain from './components/body/post/PostPageMain';
 import ViewPost from './components/body/post/ViewPost';
 import PageNotFound from './components/common/PageNotFound';
 
+import WYSIWYG from './components/wysiwyg/wysiwyg';
 
 const history = syncHistoryWithStore(browserHistory, store);
 let routes = (
@@ -19,6 +20,7 @@ let routes = (
       <Route path="posts" name="Posts" component={PostPageMain}>
         <Route path=":id" name="View Posts" component={ViewPost}/>
       </Route>
+      <Route path="wysiwyg" name="editor" component={WYSIWYG}/>
     </Route>
     <Route path="*" name="Page Not Found" component={PageNotFound}/>
   </Router>

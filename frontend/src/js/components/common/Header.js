@@ -49,7 +49,7 @@ class Header extends React.Component {
             <div className='search-bar'>
               {<form style={{display:this.state.displaySearchBar?'block':'none'}}>
                 <div className='input-field'>
-                  <input id='search' ref='search' type='search' placeholder='Search' autofocus
+                  <input id='search' ref='search' type='search' placeholder='Search'
                          onBlur={this.toggleSearchBar} required/>
                   <i className='material-icons' onClick={this.toggleSearchBar}>close</i>
                 </div>

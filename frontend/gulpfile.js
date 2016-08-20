@@ -38,6 +38,7 @@
           './src/css/font-awesome.css',
           './src/css/glyphicons.css',
           './src/css/fontface.css',
+          './src/css/simplemde.min.css',
           './src/css/custom.css'
         ],
         img: ['./src/img/*', './src/img/**/*'],
@@ -45,7 +46,8 @@
         materializeFonts: ['./src/css/fonts/roboto'],
         vendorJs: [
           'node_modules/jquery/dist/jquery.min.js',
-          './src/vendorjs/materialize.js'
+          './src/vendorjs/materialize.js',
+          './src/vendorjs/simplemde.min.js'
         ]
       },
       dist: {
