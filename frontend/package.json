@@ -82,6 +82,7 @@
     "redux": "^3.3.1",
     "redux-thunk": "^2.0.1",
     "showdown": "^1.4.2",
+    "showdown-youtube": "^1.1.0",
     "superagent": "^2.0.0-alpha.3",
     "superagent-promise": "^1.1.0",
     "toastr": "^2.1.2"

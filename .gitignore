@@ -6,7 +6,6 @@
 *.iml
 
 frontend/node_modules
-frontend/dist
 frontend/test/temp
 .sass-cache
 .tmp
