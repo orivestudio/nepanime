@@ -40137,7 +40137,9 @@
 	var history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.browserHistory, _store2.default);
 	var routes = _react2.default.createElement(
 	  _reactRouter.Router,
-	  { history: history },
+	  { onUpdate: function onUpdate() {
+	      return window.scrollTo(0, 0);
+	    }, history: history },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _App2.default },
